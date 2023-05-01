@@ -52,7 +52,6 @@ class TestPostAPI:
 
     def test_post_single_not_auth(self, client, post):
         response = client.get(self.post_detail_url.format(post_id=post.id))
-
         assert response.status_code == HTTPStatus.OK, (
             'Проверьте, что GET-запрос неавторизованного пользователя к '
             f'`{self.post_detail_url}` возвращает ответ со статусом 200.'
