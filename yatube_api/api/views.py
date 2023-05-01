@@ -52,7 +52,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         """Сохраняет автора коммента"""
         post = get_object_or_404(Post, pk=self.kwargs.get('post_id'))
         serializer.save(author=self.request.user, post=post)
-  
+
 
 class FollowViewSet(viewsets.ModelViewSet):
     queryset = Follow.objects.all()
